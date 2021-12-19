@@ -1,6 +1,9 @@
 import numpy as np
 from Units import *
 
+import os
+rootdir = os.path.dirname(os.path.abspath(__file__)) + "/"
+
 from scipy import special, interpolate, optimize
 
 SUPPRESS_WARNINGS = True
@@ -37,7 +40,7 @@ m_pi        = 135*MeV #Pion mass
 #See Fig. 4 of https://journals.aps.org/prd/abstract/10.1103/PhysRevD.33.889
 #Could be a correction of ~10
 def load_anharmonic_correction():
-    theta, F = np.loadtxt("data/AnharmonicCorrection.txt", unpack=True)
+    theta, F = np.loadtxt(rootdir + "../data/AnharmonicCorrection.txt", unpack=True)
     F[F > 10] = 0.0*F[F > 10] + 10.0 #Truncate at 10 (because it tends to infinity as theta -> pi)
     return interpolate.interp1d(theta, F, bounds_error=False, fill_value=(F[0], F[-1]))
     

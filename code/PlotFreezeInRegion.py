@@ -1,7 +1,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
-matplotlib.rc_file("matplotlibrc")
+import os
+
+rootdir = os.path.dirname(os.path.abspath(__file__)) + "/"
+
+matplotlib.rc_file(rootdir + "matplotlibrc")
 matplotlib.rcParams['text.latex.preamble'] = [
     r'\usepackage{amsmath}',
     r'\usepackage{amssymb}']
@@ -156,5 +160,5 @@ secax.set_ylabel(r'$m_a$ [eV]')
 
 plt.title(r"$f_{\gamma'} = \Omega_{\gamma'}/\Omega_\mathrm{DM} = " + str(float(f_dp)) + " $", pad=10)
 
-plt.savefig("plots/FreezeInRegion_fdp=" + str(int(f_dp*100)) + "pct.pdf", bbox_inches='tight')
+plt.savefig(rootdir + "../plots/FreezeInRegion_fdp=" + str(int(f_dp*100)) + "pct.pdf", bbox_inches='tight')
 #plt.show()
