@@ -290,6 +290,66 @@ class Model():
         return Omegah2_dp*(48*np.pi**4*(rho_crit/h**2)*g_star)/(1080*zeta*s0)
 
 
+    def calc_Omegah2_dp_Conversion(self, m_dp, epsilon):
+        """Calculate relic density of Dark Photons Omega_dp*h^2 through photon resonant conversion.
+        
+            Arguments:
+            ---------
+                m_dp (float): Dark Photon Mass.
+                epsilon (float): Dark Photon kinetic mixing.
+   
+            Returns:
+            ---------
+                Omegah2_dp (float): Dark Photon density Omega_dp*h^2
+        """
+        return Omegah2_dm*7.7e-4*(epsilon/1e-9)**2*(m_dp/(10*eV))**3
+        
+    def calc_epsilon_Conversion(self, m_dp, f_dp):
+        """Calculate the kinetic mixing required to achieve a given relic density of 
+           Dark Photons Omega_dp*h^2 through photon resonant conversion.
+        
+            Arguments:
+            ---------
+                m_dp (float): Dark Photon Mass.
+                f_dp (float): Fraction of DM in Dark Photon, Omega_dp/Omega_dm
+   
+            Returns:
+            ---------
+                epsilon (float): Dark Photon kinetic mixing.
+        """
+        return 1e-9*((f_dp/7.7e-4)*(m_dp/(10*eV))**-3)**0.5
+        
+        
+    def calc_Omegah2_dp_DarkHiggsstrahlung(self, m_dp, epsilon):
+        """Calculate relic density of Dark Photons Omega_dp*h^2 through Dark Higgstrahlung.
+        
+            Arguments:
+            ---------
+                m_dp (float): Dark Photon Mass.
+                epsilon (float): Dark Photon kinetic mixing.
+   
+            Returns:
+            ---------
+                Omegah2_dp (float): Dark Photon density Omega_dp*h^2
+        """
+        return Omegah2_dm*1.2e-4*(self.e_D/0.1)**2*(m_dp/(10*eV))*(epsilon/1e-9)**2
+        
+    def calc_epsilon_DarkHiggsstrahlung(self, m_dp, f_dp):
+        """Calculate the kinetic mixing required to achieve a given relic density of 
+           Dark Photons Omega_dp*h^2 through Dark Higgsstrahlung.
+        
+            Arguments:
+            ---------
+                m_dp (float): Dark Photon Mass.
+                f_dp (float): Fraction of DM in Dark Photon, Omega_dp/Omega_dm
+   
+            Returns:
+            ---------
+                epsilon (float): Dark Photon kinetic mixing.
+        """        
+        return 9.1e-8*np.sqrt(f_dp)*(0.1/self.e_D)*(m_dp/(10*eV))**-0.5
+    
+        
     #Dark Photon Decay widths
     #-------------------------------------
     def calc_width_dp_e_e(self, m_dp, epsilon):
