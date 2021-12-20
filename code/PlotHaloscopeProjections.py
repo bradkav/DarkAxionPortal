@@ -12,7 +12,7 @@ from Dirs import axionlimits_dir
 
 from PlotFuncs import BlackHoleSpins, AxionPhoton, MySaveFig, UpperFrequencyAxis,col_alpha,FigSetup
 
-fig,ax = FigSetup(Shape='Square',ylab='$|g_{a\gamma\gamma}|$ [GeV$^{-1}$]',mathpazo=True,\
+fig,ax = FigSetup(Shape='Square',xlab = r'Axion mass $m_a$ [eV]',ylab='$|g_{a\gamma\gamma}|$ [GeV$^{-1}$]',mathpazo=True,\
                  m_min=1e-6,m_max=1e-3,g_min=2e-16,g_max=1e-9,lfs=40, tfs=35,xtick_rotation=0,FrequencyAxis=True,N_Hz=1e6,upper_xlabel=r"Frequency [MHz]",xlabel_pad=15)
 
 y2 = 1e-9

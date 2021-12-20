@@ -28,11 +28,11 @@ def KineticMixing_production():
     plt.plot(m_dp, eps100, color='grey', linestyle='-', lw=2.5, zorder=-1)
     
     x_adjust = 500
-    plt.text(x_adjust*0.20*(1+1e-2), (x_adjust**(-3/2))*5e-6*(1-1e-2), r"$f_{\gamma'} = 100\%$ ($\gamma \rightarrow \gamma'$)", ha = "left", fontsize=18, rotation=-38.5, color='black', rotation_mode='anchor')
-    plt.text(x_adjust*0.20, (x_adjust**(-3/2))*5e-6, r"$f_{\gamma'} = 100\%$ ($\gamma \rightarrow \gamma'$)", ha = "left", fontsize=18, rotation=-38.5, color='white', rotation_mode='anchor')
+    plt.text(x_adjust*0.18*(1+1e-2), (x_adjust**(-3/2))*5e-6*(1-1e-2), r"$f_{\gamma'} = 100\%$ ($\gamma \rightarrow \gamma'$)", ha = "left", fontsize=22, rotation=-38.5, color='black', rotation_mode='anchor')
+    plt.text(x_adjust*0.18, (x_adjust**(-3/2))*5e-6, r"$f_{\gamma'} = 100\%$ ($\gamma \rightarrow \gamma'$)", ha = "left", fontsize=22, rotation=-38.5, color='white', rotation_mode='anchor')
     #plt.text(1, 1e-7, r"$f_{\gamma'} = 10\%$", ha = "left")
-    plt.text(x_adjust*0.13*(1+1e-2), (x_adjust**(-3/2))*1.5e-7*(1 - 1e-2), r"$f_{\gamma'} = 1\%$", ha = "left", fontsize=18, rotation=-38.5, color='black')
-    plt.text(x_adjust*0.13, (x_adjust**(-3/2))*1.5e-7, r"$f_{\gamma'} = 1\%$", ha = "left", fontsize=18, rotation=-38.5, color='white')
+    plt.text(x_adjust*0.10*(1+1e-2), (x_adjust**(-3/2))*1.5e-7*(1 - 1e-2), r"$f_{\gamma'} = 1\%$", ha = "left", fontsize=22, rotation=-38.5, color='black')
+    plt.text(x_adjust*0.10, (x_adjust**(-3/2))*1.5e-7, r"$f_{\gamma'} = 1\%$", ha = "left", fontsize=22, rotation=-38.5, color='white')
     
     
     #Production through Dark Higgs-strahlung
@@ -44,13 +44,13 @@ def KineticMixing_production():
     #plt.plot(m_dp, chi10, color='black', linestyle=':')
     plt.plot(m_dp, eps1_DH, color='white', linestyle='--', lw=2.5)
     
-    x_adjust = 220
+    x_adjust = 150
     rot = -14.3
-    plt.text(x_adjust*0.5*(1+1e-2), (x_adjust**(-1/2))*7.5e-7*(1-1e-2), r"$f_{\gamma'} = 100\%$ (Dark Higgs-strahlung)", ha = "left", fontsize=18, rotation=rot, color='black', rotation_mode='anchor')
-    plt.text(x_adjust*0.5, (x_adjust**(-1/2))*7.5e-7, r"$f_{\gamma'} = 100\%$ (Dark Higgs-strahlung)", ha = "left", fontsize=18, rotation=rot, color='white', rotation_mode='anchor')
+    plt.text(x_adjust*0.5*(1+1e-2), (x_adjust**(-1/2))*7.5e-7*(1-1e-2), r"$f_{\gamma'} = 100\%$ (Dark Higgs-strahlung)", ha = "left", fontsize=22, rotation=rot, color='black', rotation_mode='anchor')
+    plt.text(x_adjust*0.5, (x_adjust**(-1/2))*7.5e-7, r"$f_{\gamma'} = 100\%$ (Dark Higgs-strahlung)", ha = "left", fontsize=22, rotation=rot, color='white', rotation_mode='anchor')
     #plt.text(1, 1e-7, r"$f_{\gamma'} = 10\%$", ha = "left")
-    plt.text(x_adjust*0.4*(1+1e-2), (x_adjust**(-1/2))*4e-8*(1 - 1e-2), r"$f_{\gamma'} = 1\%$", ha = "left", fontsize=18, rotation=rot, color='black')
-    plt.text(x_adjust*0.4, (x_adjust**(-1/2))*4e-8, r"$f_{\gamma'} = 1\%$", ha = "left", fontsize=18, rotation=rot, color='white')
+    plt.text(x_adjust*0.4*(1+1e-2), (x_adjust**(-1/2))*4e-8*(1 - 1e-2), r"$f_{\gamma'} = 1\%$", ha = "left", fontsize=22, rotation=rot, color='black')
+    plt.text(x_adjust*0.4, (x_adjust**(-1/2))*4e-8, r"$f_{\gamma'} = 1\%$", ha = "left", fontsize=22, rotation=rot, color='white')
 
 def Decay():
 
@@ -59,12 +59,12 @@ def Decay():
     plt.plot(m_dp, 5.8e8*(m_dp/10)**(-9/2), color='black', linestyle='-', lw=2.5, zorder=5)
     
     #plt.text(8e3*(1+1e-2), 1e-6*(1-1e-2), r"$\tau_{\gamma^\prime} < \tau_\mathrm{U}$", ha = "left", fontsize=18, rotation=-45, color='black', rotation_mode='anchor', zorder=10)
-    plt.text(3e4, 1e-6, r"$\tau_{\gamma^\prime} < \tau_\mathrm{U}$", ha = "left", fontsize=18, rotation=-63, color='black', rotation_mode='anchor', zorder=10)
+    plt.text(3e4, 1e-6, r"$\tau_{\gamma^\prime} < \tau_\mathrm{U}$", ha = "left", fontsize=20, rotation=-63, color='black', rotation_mode='anchor', zorder=10)
     
     
 #--------------------------------------------------------------------------------------
 
-fig,ax = PF.FigSetup(Shape="Square", chi_max = 1e-5, m_min = 1e-2)
+fig,ax = PF.FigSetup(Shape="Square", chi_max = 1e-5, m_min = 1e-2,lfs=40, tfs=35)
 
 # DPDM
 #DarkMatter(ax)
