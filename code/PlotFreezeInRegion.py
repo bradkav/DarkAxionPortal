@@ -132,7 +132,7 @@ elif (AXION_LIMITS == 2):
             plt.annotate("", xytext = (5e6, f_a_min/GeV), xy =   (5e6, 1.5*f_a_min/GeV), arrowprops=dict(width=2.5, headlength=5.0,headwidth=9.0, shrink=0, facecolor=col_a, lw=0.0, shrinkA = 0, shrinkB = 0, alpha=0.7))
     
     
-#Adding the 'not Freeze-In' region
+#Adding the 'not Freeze-in' region
 m_dp_min = DAP.calc_m_dp_min(f_dp)
 ax.axvline(m_dp_min/eV,linestyle='-',color="black",zorder=1000)
 ax.fill_betweenx([1e9,1e12],m_dp_min/eV, facecolor='salmon', zorder=5)
@@ -140,7 +140,7 @@ if (m_dp_min/eV > 4.0):
     ax.text(0.75*m_dp_min/eV,3e9,"Freeze-in not achieved", weight='bold',rotation=90, rotation_mode='anchor',zorder=10, fontsize=14.0)
 
 
-plt.xlabel(r"$m_{\gamma'}$ [eV]")
+plt.xlabel(r"$m_{\gamma^\prime}$ [eV]")
 plt.ylabel(r"$f_a$ [GeV]")
 
 plt.xlim(1, 1e9)
@@ -158,7 +158,9 @@ plt.tick_params(axis='y', which = 'both', right=False)
 secax = ax.secondary_yaxis('right', functions=(lambda x: DAP.fa_to_ma(x)/eV, lambda x: DAP.ma_to_fa(x)))
 secax.set_ylabel(r'$m_a$ [eV]')
 
-plt.title(r"$f_{\gamma'} = \Omega_{\gamma'}/\Omega_\mathrm{DM} = " + str(float(f_dp)) + " $", pad=10)
+#plt.title(r"$f_{\gamma'} = \Omega_{\gamma'}/\Omega_\mathrm{DM} = " + str(float(f_dp)) + " $", pad=10)
+props = dict(boxstyle='round,pad=0.18',facecolor='white', alpha=0.9, edgecolor='none')
+plt.text(5e8, 7e11, r"$f_{\gamma'} = \Omega_{\gamma'}/\Omega_\mathrm{DM} = " + str(float(f_dp)) + " $", ha='right', va='center', bbox=props, fontsize=nfs)
 
 plt.savefig(rootdir + "../plots/FreezeInRegion_fdp=" + str(int(f_dp*100)) + "pct.pdf", bbox_inches='tight')
 #plt.show()

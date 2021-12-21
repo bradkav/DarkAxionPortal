@@ -21,7 +21,7 @@ DAP = DarkAxionPortal.Model(PQ_Phi = 1.0, e_D = 0.1, D_psi = 3)
 def DAP_projections(f_dp=1.0):
     A_Si=28.0855 #Atomic mass of Silicon
     N_a=6.02214076e23 #Avogadro
-    density=f_dp*4.5e8 #local energy-density of dark matter= 0.3 GeV/cm^3
+    density=f_dp*4.5e8 #local energy-density of dark matter= 0.45 GeV/cm^3
     
     #Cross section in Mbarns
     PECross = np.loadtxt(rootdir + '../data/Si_PhotoelectricAbsorptionCrossSection.txt')

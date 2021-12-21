@@ -10,7 +10,7 @@ matplotlib.rcParams['text.latex.preamble'] = [
     r'\usepackage{amssymb}']
 
 tfs = 16.0
-lfs = 20.0
+lfs = 18.0
 nfs = 12.0
 plt.rc('font', family='serif',size=tfs)
 plt.rcParams['axes.linewidth'] = 2.0
@@ -167,8 +167,8 @@ if (np.any(lower[inds] < upper[inds])):
 
 
 
-plt.xlabel(r"$m_{\gamma'}$ [eV]",fontsize=lfs)
-plt.ylabel(r"$m_a$ [eV]",fontsize=lfs)
+plt.xlabel(r"Dark Photon mass $m_{\gamma^\prime}$ [eV]",fontsize=lfs)
+plt.ylabel(r"Axion mass $m_a$ [eV]",fontsize=lfs)
 
 plt.xlim(1, 1e5)
 plt.ylim(3e-7, 3e-3)
@@ -186,7 +186,9 @@ plt.tick_params(axis='y', which = 'both', right=True)
 plottext = r"$f_{\mathrm{ax}} = " + str(int(100*float(1-f_dp))) + "\%; \,\, f_{\gamma'} = " + str(int(100*float(f_dp))) + "\% $"
 if (SHOW_e_D):
     plottext += r"; $e^\prime = " + str(float(e_D)) + "$"
-plt.text(8.2e4, 1.9e-3, plottext, ha='right',va='center', fontsize=12.0)
+
+props = dict(boxstyle='round,pad=0.18',facecolor='white', alpha=0.9, edgecolor='none')
+plt.text(8.2e4, 1.9e-3, plottext, ha='right',va='center', fontsize=12.0, bbox=props, zorder=50)
 outfile = rootdir + "../plots/Complementarity_" + str(int(f_dp*100)) + "pct"
 if (SHOW_e_D):
     outfile += "_eD_" + str(e_D)
