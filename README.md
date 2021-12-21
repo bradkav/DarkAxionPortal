@@ -8,13 +8,13 @@ The core of the code is in [`code/DarkAxionPortal.py`](code/DarkAxionPortal.py) 
 
 **Authors:** Bradley J Kavanagh, Juan Cortabitarte Gutiérrez
 
-#### Getting started
+### Getting started
 
-Many of the plotting routines require digitised limits from [https://github.com/cajohare/AxionLimits](github.com/cajohare/AxionLimits). Download the `AxionLimits` repo and edit the file [`code/Dirs.py`] here to point towards your local `AxionLimits/` folder. Then, to generate the plots appearing in [arXiv:2112.XXXXX](https://arxiv.org/abs/2112.XXXXX) (*'Cosmology and direct detection of the Dark Axion Portal'*), simply run the script:
+Many of the plotting routines require digitised limits from [github.com/cajohare/AxionLimits](github.com/cajohare/AxionLimits). Download the `AxionLimits` repo and edit the file [`code/Dirs.py`](code/Dirs.py) to point towards your local `AxionLimits/` folder. Then, to generate the plots appearing in [arXiv:2112.XXXXX](https://arxiv.org/abs/2112.XXXXX) (*'Cosmology and direct detection of the Dark Axion Portal'*), simply run the script:
 ```bash
 ./GeneratePlots.sh
 ```
 
-#### Acknowledgments
+### Acknowledgments
 
-Some code (especially in the `code/PlotFuncs*.py` scripts) has been adapted from [https://github.com/cajohare/AxionLimits](github.com/cajohare/AxionLimits) (MIT License), which we are grateful for.
+Some code (especially in the `code/PlotFuncs*.py` scripts) has been adapted from [github.com/cajohare/AxionLimits](github.com/cajohare/AxionLimits) (MIT License), which we are grateful for.
