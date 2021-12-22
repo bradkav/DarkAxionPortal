@@ -10,7 +10,7 @@ The core of the code is in [`code/DarkAxionPortal.py`](code/DarkAxionPortal.py) 
 
 ### Getting started
 
-Many of the plotting routines require digitised limits from [github.com/cajohare/AxionLimits](github.com/cajohare/AxionLimits). Download the `AxionLimits` repo and edit the file [`code/Dirs.py`](code/Dirs.py) to point towards your local `AxionLimits/` folder. Then, to generate the plots appearing in [arXiv:2112.XXXXX](https://arxiv.org/abs/2112.11387) (*'Cosmology and direct detection of the Dark Axion Portal'*), simply run the script:
+Many of the plotting routines require digitised limits from [github.com/cajohare/AxionLimits](github.com/cajohare/AxionLimits). Download the `AxionLimits` repo and edit the file [`code/Dirs.py`](code/Dirs.py) to point towards your local `AxionLimits/` folder. Then, to generate the plots appearing in [arXiv:2112.2112.11387](https://arxiv.org/abs/2112.11387) (*'Cosmology and direct detection of the Dark Axion Portal'*), simply run the script:
 ```bash
 ./GeneratePlots.sh
 ```
