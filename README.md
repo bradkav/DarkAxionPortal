@@ -1,6 +1,6 @@
 # DarkAxionPortal
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![DOI](https://zenodo.org/badge/439945365.svg)](https://zenodo.org/badge/latestdoi/439945365)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![DOI](https://zenodo.org/badge/439945365.svg)](https://zenodo.org/badge/latestdoi/439945365) [![arXiv](https://img.shields.io/badge/arXiv-2112.11387-B31B1B)](https://arxiv.org/abs/2112.11387)
 
 **Code for studying the cosmology and detection of the Dark Axion Portal Model for Dark Matter.**
 
