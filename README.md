@@ -1,6 +1,6 @@
 # DarkAxionPortal
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![DOI](https://zenodo.org/badge/439945365.svg)](https://zenodo.org/badge/latestdoi/439945365)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![DOI](https://zenodo.org/badge/439945365.svg)](https://zenodo.org/badge/latestdoi/439945365) [![arXiv](https://img.shields.io/badge/arXiv-2112.11387-B31B1B)](https://arxiv.org/abs/2112.11387)
 
 **Code for studying the cosmology and detection of the Dark Axion Portal Model for Dark Matter.**
 
@@ -8,13 +8,13 @@ The core of the code is in [`code/DarkAxionPortal.py`](code/DarkAxionPortal.py) 
 
 **Authors:** Bradley J Kavanagh, Juan Cortabitarte Gutiérrez
 
-#### Getting started
+### Getting started
 
-Many of the plotting routines require digitised limits from [https://github.com/cajohare/AxionLimits](github.com/cajohare/AxionLimits). Download the `AxionLimits` repo and edit the file [`code/Dirs.py`] here to point towards your local `AxionLimits/` folder. Then, to generate the plots appearing in [arXiv:2112.XXXXX](https://arxiv.org/abs/2112.XXXXX) (*'Cosmology and direct detection of the Dark Axion Portal'*), simply run the script:
+Many of the plotting routines require digitised limits from [github.com/cajohare/AxionLimits](github.com/cajohare/AxionLimits). Download the `AxionLimits` repo and edit the file [`code/Dirs.py`](code/Dirs.py) to point towards your local `AxionLimits/` folder. Then, to generate the plots appearing in [arXiv:2112.2112.11387](https://arxiv.org/abs/2112.11387) (*'Cosmology and direct detection of the Dark Axion Portal'*), simply run the script:
 ```bash
 ./GeneratePlots.sh
 ```
 
-#### Acknowledgments
+### Acknowledgments
 
-Some code (especially in the `code/PlotFuncs*.py` scripts) has been adapted from [https://github.com/cajohare/AxionLimits](github.com/cajohare/AxionLimits) (MIT License), which we are grateful for.
+Some code (especially in the `code/PlotFuncs*.py` scripts) has been adapted from [github.com/cajohare/AxionLimits](github.com/cajohare/AxionLimits) (MIT License), which we are grateful for.
