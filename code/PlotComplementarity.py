@@ -40,6 +40,8 @@ if (args.show_e_D > 0):
 
 DAP = DarkAxionPortal.Model(PQ_Phi = 1.0, e_D = e_D, D_psi = 3)
 
+print("g_agammagamma:", DAP.calc_G_app(1))
+
 AXION_LIMITS = 2
 
 print("> Plotting for f_dp = ", f_dp, "; e_D = ", e_D)
@@ -89,9 +91,9 @@ ax.axhline(4e-6,linestyle='-',color="black",zorder=100002)
 ax.text(1e3, 2.7e-6,"ADMX excluded", weight='bold',rotation=0, rotation_mode='anchor',zorder=100002, fontsize=nfs, va='center')
 
 #Add Axion projected region
-ax.fill_between(m_dp_list/eV, 7e-7, 460e-6, facecolor=[0.8, 0.0, 0.0], zorder=3, alpha=0.7)
+ax.fill_between(m_dp_list/eV, 7e-7, 400e-6, facecolor=[0.8, 0.0, 0.0], zorder=3, alpha=0.7)
 ax.axhline(7e-7,linestyle='-',color="black",zorder=3.1)
-ax.axhline(460e-6,linestyle='-',color="black",zorder=3.1)
+ax.axhline(400e-6,linestyle='-',color="black",zorder=3.1)
 ax.text(1.2, 30e-6,"Haloscopes\nprojected", weight='bold',rotation=0, rotation_mode='anchor',zorder=10, fontsize=nfs, va='center')
 
 #ax.axhline(,linestyle='-.',color="black",zorder=1000)
@@ -149,7 +151,7 @@ if (1e9 < f_a_min/GeV < 1e12):
 inds = np.arange(len(m_dp_list))[(m_dp_list <  200*eV) & (m_dp_list > m_dp_min) & (m_dp_list > 10*eV)]
 #print(inds)
 lower = 1.15*np.maximum(ma_list2, np.ones_like(ma_list2)*7e-7*eV)
-upper = 0.9*np.ones_like(m_dp_list)*460e-6*eV
+upper = 0.9*np.ones_like(m_dp_list)*400e-6*eV
 
 
 if (np.any(lower[inds] < upper[inds])):

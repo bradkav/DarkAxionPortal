@@ -99,7 +99,7 @@ class Model():
             ---------
                 G_app (float): axion-photon-photon coupling.
         """
-        return (e**2/(8*np.pi**2))*(self.PQ_Phi/f_a)*(2*N_C*Q_psi**2 - (2/3)*(4+z_q)/(1+z_q))
+        return (e**2/(8*np.pi**2))*(self.PQ_Phi/f_a)*(2*N_C*self.Q_psi**2 - (2/3)*(4+z_q)/(1+z_q))
 
     def calc_G_apdp(self, f_a, epsilon):
         """Calculate (dimensionful) axion-photon-dark photon coupling.

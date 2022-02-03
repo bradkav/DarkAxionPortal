@@ -131,22 +131,22 @@ plt.gcf().text(0.517,0.53,r'{\bf RADES}',color=col_alpha(RADES_col,1),fontsize=1
 # Neutron stars
 dat = loadtxt(axionlimits_dir +'limit_data/AxionPhoton/NeutronStars_GreenBank.txt')
 plt.fill_between(dat[:,0],scale*dat[:,1],y2=y2,edgecolor='k',facecolor='ForestGreen',zorder=0.11)
-dat = loadtxt(axionlimits_dir +'limit_data/AxionPhoton/NeutronStars_VLA.txt')
-plt.fill_between(dat[:,0],scale*dat[:,1],y2=y2,edgecolor='k',facecolor='SeaGreen',zorder=0.11)
+#dat = loadtxt(axionlimits_dir +'limit_data/AxionPhoton/NeutronStars_VLA.txt')
+#plt.fill_between(dat[:,0],scale*dat[:,1],y2=y2,edgecolor='k',facecolor='SeaGreen',zorder=0.11)
 dat = loadtxt(axionlimits_dir +'limit_data/AxionPhoton/NeutronStars_Battye.txt') 
 plt.plot(dat[:,0],dat[:,1],color='k',lw=1,zorder=0.2)
 plt.fill_between(dat[:,0],scale*dat[:,1],y2=1e0,zorder=0.2,color='#4ad46a')
-plt.gcf().text(0.53*(1-0.003),0.81*(1+0.003),r'{\bf Neutron Stars}',color='k',fontsize=30,rotation=0,rotation_mode='anchor',ha='center',va='center')
-plt.gcf().text(0.53,0.81,r'{\bf Neutron Stars}',color=col_alpha('Green',0.4),fontsize=30,rotation=0,rotation_mode='anchor',ha='center',va='center')
+plt.gcf().text(0.50*(1-0.003),0.81*(1+0.003),r'{\bf Neutron Stars}',color='k',fontsize=30,rotation=0,rotation_mode='anchor',ha='center',va='center')
+plt.gcf().text(0.50,0.81,r'{\bf Neutron Stars}',color=col_alpha('Green',0.4),fontsize=30,rotation=0,rotation_mode='anchor',ha='center',va='center')
 
 plt.gcf().text(0.34*(1-0.001),0.76*(1+0.001),r'{\bf Foster et al.}',color='k',fontsize=25,rotation=0,rotation_mode='anchor',ha='center',va='center',multialignment='center')
 plt.gcf().text(0.34,0.76,r'Foster et al.',color=col_alpha('ForestGreen',0.7),fontsize=25,rotation=0,rotation_mode='anchor',ha='center',va='center',multialignment='center')
 
-plt.gcf().text(0.47*(1-0.001),0.76*(1+0.001),r'{\bf Darling}',color='k',fontsize=25,rotation=0,rotation_mode='anchor',ha='center',va='center',multialignment='center')
-plt.gcf().text(0.47,0.76,r'Darling',color=col_alpha('SeaGreen',0.7),fontsize=25,rotation=0,rotation_mode='anchor',ha='center',va='center',multialignment='center')
+#plt.gcf().text(0.47*(1-0.001),0.76*(1+0.001),r'{\bf Darling}',color='k',fontsize=25,rotation=0,rotation_mode='anchor',ha='center',va='center',multialignment='center')
+#plt.gcf().text(0.47,0.76,r'Darling',color=col_alpha('SeaGreen',0.7),fontsize=25,rotation=0,rotation_mode='anchor',ha='center',va='center',multialignment='center')
 
-plt.gcf().text(0.6*(1-0.001),0.76*(1+0.001),r'{\bf Battye et al.}',color='k',fontsize=25,rotation=0,rotation_mode='anchor',ha='center',va='center',multialignment='center')
-plt.gcf().text(0.6,0.76,r'Battye et al.',color=col_alpha('#20c742',0.7),fontsize=25,rotation=0,rotation_mode='anchor',ha='center',va='center',multialignment='center')
+plt.gcf().text(0.58*(1-0.001),0.76*(1+0.001),r'{\bf Battye et al.}',color='k',fontsize=25,rotation=0,rotation_mode='anchor',ha='center',va='center',multialignment='center')
+plt.gcf().text(0.58,0.76,r'Battye et al.',color=col_alpha('#20c742',0.7),fontsize=25,rotation=0,rotation_mode='anchor',ha='center',va='center',multialignment='center')
 
 #AxionPhoton.Haloscopes(ax,projection=True,fs=20,text_on=True,BASE_arrow_on=True)
 
@@ -163,22 +163,24 @@ plt.fill_between(dat[:,0],(f_ax**-0.5)*dat[:,1],y2=y2,edgecolor=None,facecolor=A
 plt.text(3.5e-5,1e-15,r'{\bf ADMX}',fontsize=20,color=ADMX_col,rotation=0,ha='left',va='top',clip_on=True)
 plt.plot([3e-5,2e-5],[1e-15,0.2e-14],'k-',lw=1.5)
 
-#CADEx
-CADEx_col = [0.95,0.5,0.5]
-#CADEx_col = 'k'
-mvals = geomspace(330e-6, 460e-6)
-gvals = (f_ax**-0.5)*1.6e-13*mvals/370e-6
-plt.fill_between(mvals,gvals,y2=y2,edgecolor='k',facecolor=CADEx_col,zorder=0.1, linewidth=3.0, alpha=0.4)
-xvals = concatenate((mvals[0:1], mvals, mvals[-2:-1]))
-yvals = concatenate(([y2], gvals, [y2]))
-plt.plot(xvals, yvals, color='k', zorder=0.11, linewidth=3.0)
-#plt.fill_between(mvals,4e-13*mvals/400e-6,y2=y2,edgecolor='k',facecolor=None,zorder=0.1, linewidth=3.0)
-#plt.plot([330, 460],[dat[0,1],y2],color=CADEx_col,lw=2,zorder=0.05)
-plt.gcf().text(0.764,0.615,r'{\bf CADEx}',color='k',fontsize=30,rotation=90,rotation_mode='anchor',ha='center',va='center')
+INCLUDE_CADEX = False
+if (INCLUDE_CADEX):
+    #CADEx
+    CADEx_col = [0.95,0.5,0.5]
+    #CADEx_col = 'k'
+    mvals = geomspace(330e-6, 460e-6)
+    gvals = (f_ax**-0.5)*1.6e-13*mvals/370e-6
+    plt.fill_between(mvals,gvals,y2=y2,edgecolor='k',facecolor=CADEx_col,zorder=0.1, linewidth=3.0, alpha=0.4)
+    xvals = concatenate((mvals[0:1], mvals, mvals[-2:-1]))
+    yvals = concatenate(([y2], gvals, [y2]))
+    plt.plot(xvals, yvals, color='k', zorder=0.11, linewidth=3.0)
+    #plt.fill_between(mvals,4e-13*mvals/400e-6,y2=y2,edgecolor='k',facecolor=None,zorder=0.1, linewidth=3.0)
+    #plt.plot([330, 460],[dat[0,1],y2],color=CADEx_col,lw=2,zorder=0.05)
+    plt.gcf().text(0.764,0.615,r'{\bf CADEx}',color='k',fontsize=30,rotation=90,rotation_mode='anchor',ha='center',va='center')
 
 plt.gca().xaxis.labelpad = 0
 
 plt.gcf().text(0.89,0.13,r'$f_\mathrm{ax} = 90\%; \,\,\rho_0 = 0.45$ GeV cm$^{-3}$',fontsize=25,ha='right', va='bottom')
 
 #plt.title('0',color='w',pad=10)
-MySaveFig(fig,'AxionPhoton_RadioFreqCloseup_CADEx_withProjections', pngsave=False)
+MySaveFig(fig,'AxionPhoton_RadioFreqCloseup_withProjections', pngsave=False)
